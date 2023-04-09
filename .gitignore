@@ -11,6 +11,9 @@
 npm-debug.log
 yarn-error.log
 
+#package-version
+*package-lock.json
+
 # IDEs and editors
 .idea/
 .project
@@ -41,5 +44,3 @@ testem.log
 .DS_Store
 Thumbs.db
 
-#package-version
-package-lock.json

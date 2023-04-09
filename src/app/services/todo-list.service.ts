@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ITodoList } from '../interfaces/todo-list.interface';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class TodoListService {
@@ -10,17 +12,15 @@ export class TodoListService {
     description: 'hello this is descrpition.'
   }];
 
-  constructor(private _http: HttpClient) {}
+  constructor(private _http: HttpClient) { }
 
-  addTodoList(toDoList: ITodoList): ITodoList[] {
+  addTodoList(toDoList: ITodoList): Observable<any> {
     this.todoServiceList.push(toDoList);
-    return this.todoServiceList;
-    // return this._http.post(`/`);
+    return this._http.post<ITodoList>(`/todolist`, toDoList);
   }
 
-  getTodoList(): ITodoList[] {
-    // return this._http.get(`/g`);
-    return this.todoServiceList;
+  getTodoList(): Observable<ITodoList[]> {
+    return this._http.get<ITodoList[]>(`/todolist`);
   }
 
 }
