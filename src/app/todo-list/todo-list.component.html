@@ -4,17 +4,17 @@
       <div class="card p-4">
         <div class="row input-group mb-3">
           <div class="col-sm-11">
-            <input type="text" class="form-control" placeholder="New task..." aria-label="New task" aria-describedby="basic-addon2">
+            <input type="text" class="form-control" (keyup)="onKey($event)" placeholder="New task..." aria-label="New task" aria-describedby="basic-addon2">
           </div>
           <div class="col-sm-1">
-            <button type="button" class="btn btn-outline-dark">Add</button>
+            <button type="button" (click)="addTodoList()" class="btn btn-outline-dark">Add</button>
           </div>
         </div>
-        <div class="row m-0 pt-3">
+        <div class="row m-0 pt-3" *ngFor="let task of todoList">
           <div class="row m-0 list-group">
             <div class="col-sm list-group-item d-flex">
               <input type="checkbox" class="custom-control-input" id="customCheck1">
-              <label class="custom-control-label ms-3" for="customCheck1">Notes...</label>
+              <label class="custom-control-label ms-3" for="customCheck1">{{task.title}}</label>
             </div>
           </div>
         </div>
