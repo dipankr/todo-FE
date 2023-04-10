@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:dev": "ng serve --disable-host-check --host localdev-todo.com --ssl",
     "build:dev": "ng build --configuration production",
     "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
