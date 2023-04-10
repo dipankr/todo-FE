@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --configuration production",
-    "build:github": "ng build --configuration production --base-href .",
+    "build:github": "ng build --configuration production --output-path=docs --base-href=/todo-FE/",
     "start:dev": "ng serve --disable-host-check --host localdev-todo.com --ssl",
     "build:dev": "ng build --configuration production",
     "build:prod": "ng build --configuration production",
