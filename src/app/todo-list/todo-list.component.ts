@@ -8,12 +8,12 @@ import { ITodoList } from '../interfaces/todo-list.interface';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit {
-  todoList: ITodoList[];
+  todoList: ITodoList[] | undefined;
   todoTitle: string = '';
   todoDescription: string = '';
 
   constructor(private todoListService: TodoListService) {
-    this.todoList = this.todoListService.getTodoList();
+    this.getTodoList();
   }
 
   ngOnInit() {
@@ -24,8 +24,19 @@ export class TodoListComponent implements OnInit {
     this.todoTitle = '';
     this.todoTitle += event.target.value;
   }
+  
+  getTodoList(): void {
+    this.todoListService.getTodoList().subscribe((res: ITodoList[]) => {
+      this.todoList = res;
+    });
+  }
 
   addTodoList() {
-    this.todoList = this.todoListService.addTodoList({ 'title': this.todoTitle, 'description': this.todoDescription});
+    const toDoListObj = { 'title': this.todoTitle, 'description': this.todoDescription};
+    this.todoListService.addTodoList(toDoListObj).subscribe((res) => {
+      if(res[0].success) {
+        this.getTodoList();
+      }
+    });
   }
 }

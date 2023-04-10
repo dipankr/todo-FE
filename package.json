@@ -1,14 +1,15 @@
 {
   "name": "todo-fe",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build:dev": "ng build --configuration production",
+    "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^15.2.0",
     "@angular/cdk": "^15.2.6",
@@ -23,7 +24,7 @@
     "@ng-bootstrap/ng-bootstrap": "^14.1.0",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.4",
-    "rxjs": "~7.8.0",
+    "rxjs": "^7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },
