@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --configuration production",
+    "build:github": "ng build --output-path docs --base-href todo-fe",
     "start:dev": "ng serve --disable-host-check --host localdev-todo.com --ssl",
     "build:dev": "ng build --configuration production",
     "build:prod": "ng build --configuration production",

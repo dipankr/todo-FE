@@ -1,4 +1,4 @@
 export const enviroment: any = {
-    APP_ENV: '$(APP_ENV)',
-    API: '$(API_URL)'
+    APP_ENV: 'PROD',
+    API: 'https://todo-uyt1.onrender.com'
 }

@@ -34,9 +34,8 @@ export class TodoListComponent implements OnInit {
   addTodoList() {
     const toDoListObj = { 'title': this.todoTitle, 'description': this.todoDescription};
     this.todoListService.addTodoList(toDoListObj).subscribe((res) => {
-      if(res[0].success) {
-        this.getTodoList();
-      }
+      console.log('res:::::', res);
+      this.getTodoList();
     });
   }
 }
