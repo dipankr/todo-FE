@@ -24,7 +24,7 @@ export class TodoListComponent implements OnInit {
     this.todoTitle = '';
     this.todoTitle += event.target.value;
   }
-  
+
   getTodoList(): void {
     this.todoListService.getTodoList().subscribe((res: ITodoList[]) => {
       this.todoList = res;
