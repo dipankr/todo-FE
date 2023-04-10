@@ -4,7 +4,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 
 const routes: Routes = [
   {
-    path: '/',
+    path: '',
     component: TodoListComponent,
   },
 ];
