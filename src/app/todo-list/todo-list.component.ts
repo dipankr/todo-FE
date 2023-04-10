@@ -24,7 +24,7 @@ export class TodoListComponent implements OnInit {
     this.todoTitle = '';
     this.todoTitle += event.target.value;
   }
-  
+
   getTodoList(): void {
     this.todoListService.getTodoList().subscribe((res: ITodoList[]) => {
       this.todoList = res;
@@ -34,9 +34,7 @@ export class TodoListComponent implements OnInit {
   addTodoList() {
     const toDoListObj = { 'title': this.todoTitle, 'description': this.todoDescription};
     this.todoListService.addTodoList(toDoListObj).subscribe((res) => {
-      if(res[0].success) {
-        this.getTodoList();
-      }
+      this.getTodoList();
     });
   }
 }
