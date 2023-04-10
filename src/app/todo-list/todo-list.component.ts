@@ -20,22 +20,25 @@ export class TodoListComponent implements OnInit {
     // this.todoList = this.todoListService.getTodoList();
   }
 
-  onKey(event: any) { // without type info
-    this.todoTitle = '';
-    this.todoTitle += event.target.value;
+  onKey(event: any) {
+    this.todoTitle = event.target.value;
   }
 
   getTodoList(): void {
-    this.todoListService.getTodoList().subscribe((res: ITodoList[]) => {
-      this.todoList = res;
+    this.todoListService.getTodoList().subscribe((res) => {
+      this.todoList = res?.response?.data || [];
     });
   }
 
   addTodoList() {
     const toDoListObj = { 'title': this.todoTitle, 'description': this.todoDescription};
     this.todoListService.addTodoList(toDoListObj).subscribe((res) => {
-      console.log('res:::::', res);
       this.getTodoList();
+      this.resetToDoInput();
     });
+  }
+
+  resetToDoInput() {
+    this.todoTitle = '';
   }
 }

@@ -19,8 +19,8 @@ export class TodoListService {
     return this._http.post(`/todolist`, toDoList);
   }
 
-  getTodoList(): Observable<ITodoList[]> {
-    return this._http.get<ITodoList[]>(`/todolist`);
+  getTodoList(): Observable<any> {
+    return this._http.get(`/todolist`);
   }
 
 }
