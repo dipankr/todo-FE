@@ -44,8 +44,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "1mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -74,7 +74,8 @@
                   "with": "src/enviroments/enviroment.dev.ts"
                 }
               ]
-            }
+            },
+            "defaultConfiguration": "production"
           }
         },
         "serve": {
