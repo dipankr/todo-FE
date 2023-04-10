@@ -1,7 +1,7 @@
 {
   "name": "todo-fe",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "scripts": {
     "ng": "ng",
     "start": "ng serve --configuration production",
