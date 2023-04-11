@@ -20,8 +20,7 @@ import { HttpInterceptorService } from './utils/http/http.interceptor.service'
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
-    BrowserAnimationsModule,
-    AppRoutingModule
+    BrowserAnimationsModule
   ],
   providers: [
     TodoListService,
