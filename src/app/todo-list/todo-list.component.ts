@@ -22,6 +22,7 @@ export class TodoListComponent implements OnInit {
 
   onKey(event: any) {
     this.todoTitle = event.target.value;
+    this.addTodoList();
   }
 
   getTodoList(): void {
