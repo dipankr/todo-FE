@@ -8,7 +8,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TodoListService } from './services/todo-list.service';
-import { HttpInterceptorService } from './utils/http/http.interceptor.service'
+import { HttpInterceptorService } from './utils/http/http.interceptor.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HttpInterceptorService } from './utils/http/http.interceptor.service'
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule

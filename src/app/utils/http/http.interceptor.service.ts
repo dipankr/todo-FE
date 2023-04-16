@@ -1,7 +1,7 @@
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CONFIG } from '../../../config';
+import * as CONFIG from '../../../config';
 
 @Injectable()
 export class HttpInterceptorService implements HttpInterceptor {
