@@ -5,5 +5,5 @@
 import { enviroment } from "./enviroments/enviroment";
 
 export const CONFIG = enviroment;
-export const API_URL = CONFIG.API ? CONFIG.API : '$(API_URL)';
-export const APP_ENV = CONFIG.APP_ENV ? CONFIG.APP_ENV : '$(APP_ENV)';
+export const API_URL = CONFIG.USE_BACKEND_NAME === 'NODE'? CONFIG.BACKEND_URL_NODE: CONFIG.BACKEND_URL_JAVA;
+export const APP_ENV = CONFIG.APP_ENV;

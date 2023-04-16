@@ -15,7 +15,7 @@ export class HttpInterceptorService implements HttpInterceptor {
     }
 
     updateUrl(url: string) {
-        return CONFIG.API + '/api' + url;
+        return CONFIG.API_URL + '/api' + url;
     }
 
     modifiedRequest(req: HttpRequest<any>) {
