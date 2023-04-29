@@ -7,20 +7,30 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class TodoListService {
 
-  todoServiceList: ITodoList[] = [{
-    title: 'Hello',
-    description: 'hello this is descrpition.'
-  }];
-
   constructor(private _http: HttpClient) { }
 
   addTodoList(toDoList: ITodoList): Observable<any> {
-    this.todoServiceList.push(toDoList);
     return this._http.post(`/todolist`, toDoList);
   }
 
   getTodoList(): Observable<any> {
-    return this._http.get(`/todolist`);
+    return this._http.get(`/todolist`).pipe(map((res: any) => {
+      if(res && !res.error && res.data.length) {
+        res.data.forEach((ele: any) => {
+          ele['id'] = ele._id;
+          delete ele._id;
+        });
+        return res;
+      }
+    }));
+  }
+
+  deleteTodoTask(id: any): Observable<any> {
+    return this._http.delete(`/todolist`, { params:{ id } });
+  }
+
+  editTodoTask(id: any, title: string): Observable<any> {
+    return this._http.post(`/todolist/editTask`, { id, title });
   }
 
 }
