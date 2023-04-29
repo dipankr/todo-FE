@@ -1,0 +1,38 @@
+.accordion-header {
+    .accordion-button::after {
+            float: right;
+            margin-left: 0%;
+    }
+}
+
+.todo-list__icon_margin-left {
+    margin-left: auto;
+}
+
+.todo-list__save_margin-left {
+    margin-left: 0.5rem;
+}
+
+.todo-list__delete_margin-left {
+    margin: 0 0.5rem;
+}
+
+.todo-list__no_data {
+    text-align: center;
+    margin: 2rem;
+}
+
+.disabled:hover {
+    cursor: not-allowed;
+}
+
+.todo-list__task_max-width {
+    max-width: 50rem;
+}
+
+@media screen and (max-width: 576px) {
+    .todo-list__sm_screen-btn {
+      margin-top: 0.5rem;
+      width: -webkit-fill-available
+    }
+  }

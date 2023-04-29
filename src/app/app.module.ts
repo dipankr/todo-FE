@@ -10,14 +10,23 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TodoListService } from './services/todo-list.service';
 import { HttpInterceptorService } from './utils/http/http.interceptor.service';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoListComponent
+    TodoListComponent,
+    HeaderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
+    MatIconModule,
+    MatButtonModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
